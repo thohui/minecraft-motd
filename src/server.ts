@@ -69,7 +69,7 @@ export class MinecraftServer {
     };
   }
 }
-export interface StatusResponse {
+interface StatusResponse {
   version: {
     name: string;
     protocol: number;
@@ -77,7 +77,7 @@ export interface StatusResponse {
   players: {
     max: number;
     online: number;
-    sample: PlayerSample[];
+    sample: { id: string; name: string }[];
   };
   description: {
     text: string;
@@ -85,9 +85,4 @@ export interface StatusResponse {
   favicon?: string;
   previewsChat: boolean;
   enforcesSecureChat: boolean;
-}
-
-export interface PlayerSample {
-  id: string;
-  name: string;
 }
